@@ -21,13 +21,15 @@ Saya menggunakan stream.write_all(response.as_bytes()) untuk mengirimkan respons
 ### [Commit Ketiga]
 <img width="927" alt="image" src="https://github.com/failasuf123/advprog-modul6/assets/97381822/32010875-65be-42d3-b476-49444d0373c7">
 
-- Pemisahan Penanganan Respons \n
+- Pemisahan Penanganan Respons:
+  
  Pada implementasi awal, kode untuk menangani koneksi TCP dan menghasilkan respons HTTP digabungkan dalam satu fungsi (handle_connection). Pendekatan ini berfungsi dengan baik untuk 
  contoh dasar namun dapat menjadi sulit dipelihara ketika kode berkembang. Oleh karena itu, saya memutuskan untuk memisahkan logika penanganan respons ke dalam fungsi tersendiri.
  Dengan memisahkan kode penanganan respons ke dalam fungsi terpisah (generate_response), saya mencapai organisasi kode yang lebih baik dan meningkatkan keterbacaan. Sekarang, fungsi 
  handle_connection fokus hanya pada mengelola aliran TCP dan routing permintaan, sementara fungsi generate_response menangani pembuatan respons HTTP berdasarkan permintaan yang masuk.
 
-- Alasan Refaktorisasi /n
+- Alasan Refaktorisasi:
+  
  Alasan utama untuk melakukan refaktorisasi adalah untuk mematuhi Prinsip Tanggung Jawab Tunggal (Single Responsibility Principle/SRP) dalam desain perangkat lunak. SRP menyarankan bahwa 
  sebuah fungsi atau modul seharusnya hanya memiliki satu alasan untuk berubah, yang menghasilkan basis kode yang lebih mudah dipelihara dan ditingkatkan. Dengan memisahkan logika 
  penanganan respons, saya mengisolasi tanggung jawab masing-masing fungsi, membuatnya lebih mudah dipahami, diuji, dan dimodifikasi secara independen.
