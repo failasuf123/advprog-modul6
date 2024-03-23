@@ -5,7 +5,8 @@ Proyek yang saya kerjakan terkait dengan implementasi sederhana dari penggunaan 
 Selanjutnya, pada code kedua, Saya menambahkan fungsi handle_connection untuk menangani koneksi yang masuk ke server TCP saya. Di dalam fungsi ini, Saya menggunakan BufReader untuk membaca data dari koneksi TCP dan mengumpulkan permintaan HTTP yang masuk. Permintaan HTTP tersebut kemudian dicetak ke konsol untuk dianalisis. Dengan menambahkan fungsi penanganan koneksi seperti ini, proyek saya menjadi lebih lengkap dengan kemampuan untuk memproses data yang diterima dari klien secara lebih terstruktur.
 
 
-
+### [Commit Kedua]
+<img width="960" alt="image" src="https://github.com/failasuf123/advprog-modul6/assets/97381822/f868f5f5-7a66-406a-9351-e04f231dbafc">
 
 
 
