@@ -36,4 +36,8 @@ Saya menggunakan stream.write_all(response.as_bytes()) untuk mengirimkan respons
  Selain itu, refaktorisasi memungkinkan saya untuk meningkatkan struktur keseluruhan kode dan menghilangkan blok kode yang redundan atau tidak diperlukan. Hal ini tidak hanya meningkatkan 
  keterpeliharaan kode tetapi juga mendorong penggunaan kode yang lebih baik dan modularitas, yang sangat penting untuk pengembangan proyek jangka panjang.
 
+### [Commit Keempat]
 
+Tujuan dari simulasi respons lambat adalah untuk mensimulasikan situasi di mana server mengalami keterlambatan dalam merespons permintaan dari klien. Hal ini berguna untuk mengidentifikasi dan mengatasi masalah performa yang mungkin terjadi pada server, terutama saat menghadapi beban tinggi atau kondisi jaringan yang buruk.
+
+Kode yang diberikan adalah contoh dari respons yang lambat. Pada bagian kode yang ditambahkan, terdapat kondisi yang memperlambat respons jika permintaan klien adalah GET /sleep HTTP/1.1. Dalam kasus tersebut, server akan memperlambat respons selama 10 detik sebelum mengirimkan respons yang sebenarnya.
