@@ -41,3 +41,12 @@ Saya menggunakan stream.write_all(response.as_bytes()) untuk mengirimkan respons
 Tujuan dari simulasi respons lambat adalah untuk mensimulasikan situasi di mana server mengalami keterlambatan dalam merespons permintaan dari klien. Hal ini berguna untuk mengidentifikasi dan mengatasi masalah performa yang mungkin terjadi pada server, terutama saat menghadapi beban tinggi atau kondisi jaringan yang buruk.
 
 Kode yang diberikan adalah contoh dari respons yang lambat. Pada bagian kode yang ditambahkan, terdapat kondisi yang memperlambat respons jika permintaan klien adalah GET /sleep HTTP/1.1. Dalam kasus tersebut, server akan memperlambat respons selama 10 detik sebelum mengirimkan respons yang sebenarnya.
+
+
+### [Commit Kelima]
+
+Pada tahap ini, saya mengimplementasikan penggunaan ThreadPool dalam penanganan koneksi TCP pada server yang saya buat. Sebelumnya, server saya hanya mampu menangani satu koneksi secara serial, yang dapat menjadi bottleneck saat menghadapi banyak koneksi secara bersamaan atau saat menerima koneksi yang membutuhkan waktu proses yang lama.
+
+Dengan menambahkan ThreadPool dan menggunakan ThreadPool::execute, saya dapat memanfaatkan multiple thread untuk menangani koneksi secara paralel. Saya membuat ThreadPool dengan 4 thread, yang artinya server saya dapat menangani hingga 4 koneksi secara bersamaan. Hal ini sangat berguna untuk meningkatkan kinerja server dan responsivitas terhadap permintaan klien.
+
+Prosesnya dimulai dengan membuat listener TCP pada alamat dan port tertentu. Kemudian, saya menggunakan loop untuk menerima koneksi masuk dari listener. Setiap koneksi yang diterima akan diproses dalam thread yang tersedia dalam ThreadPool dengan menggunakan ThreadPool::execute. Fungsi handle_connection akan dijalankan secara asinkron (non-blocking) dalam thread tersebut untuk menangani permintaan dari klien.
